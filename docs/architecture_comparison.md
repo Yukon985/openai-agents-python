@@ -24,7 +24,7 @@
 | **函数调用** | 通过 `tools` 字段声明工具，模型返回 `tool_calls` 数组，SDK 负责执行后以 `role: tool` 的消息回传结果。 |
 | **流式协议** | 使用 `delta` 增量字段，每帧仅传输新增内容，带宽效率较高。 |
 | **Assistants/Responses API** | 提供服务端托管对话（`thread`、`run`、`conversation_id`），可减少客户端状态管理负担。 |
-| **模型多样性** | 覆盖 GPT 系列、o 系列（推理模型）、Realtime API、Embeddings、图像等多模态统一入口。 |
+| **模型多样性** | 覆盖 GPT 系列、o 系列推理模型（o1、o1-mini、o3、o3-mini 等）、Realtime API、Embeddings、图像等多模态统一入口。 |
 
 **设计建议**：
 - 若已基于 OpenAI SDK，优先使用 `Responses API` 的 `conversation_id` 管理多轮对话，可避免手动拼接历史消息带来的 bug。
